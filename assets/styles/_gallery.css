@@ -22,6 +22,10 @@
 
 #form .submit {
   background: rgb(228, 108, 148);
+  background-image: url(../images/magnifying-glass.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2rem;
   padding: 1rem 4rem;
   font-size: 1.8rem;
   color: #fff;
@@ -32,7 +36,7 @@
 }
 
 #form .submit:hover {
-  background: rgb(213, 78, 123);
+  background-color: rgb(213, 78, 123);
 }
 
 #image-container {
