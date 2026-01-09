@@ -17,10 +17,11 @@
   max-width: 60rem;
   border-radius: 1rem;
   font-size: 1.6rem;
+  background: #fff;
 }
 
 #form .submit {
-  background: #7159c1;
+  background: rgb(228, 108, 148);
   padding: 1rem 4rem;
   font-size: 1.8rem;
   color: #fff;
@@ -31,7 +32,7 @@
 }
 
 #form .submit:hover {
-  background: #5a47a1;
+  background: rgb(213, 78, 123);
 }
 
 #image-container {
@@ -42,7 +43,7 @@
 }
 
 #image-container .image-card {
-  max-width: 20rem;
+  max-width: 45rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   overflow: hidden;
@@ -59,13 +60,17 @@
 }
 
 #image-container .image-card img {
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  max-width: 45rem;
+  height: 100%;
+  min-height: 45rem;
   object-fit: cover;
 }
 
 #image-container .image-card .image-title {
   padding: 1rem;
+  border-bottom: 1px solid #eee;
+  background: #fff;
 }
 
 #image-container .image-card .image-wrapper {
@@ -211,6 +216,12 @@
   border-radius: 1rem;
 }
 
+@media (max-width: 991px) {
+  #image-container .image-card {
+    max-width: 35rem;
+  }
+}
+
 @media (max-width: 600px) {
   #form {
     flex-direction: column;
@@ -231,6 +242,6 @@
 
   #image-container .image-card img {
     width: 100%;
-    height: auto;
+    min-height: auto;
   }
 }

@@ -6,6 +6,7 @@ const container = document.querySelector("#image-container");
 const loader = document.querySelector("#loader");
 const search = document.querySelector(".search");
 const form = document.querySelector("#form");
+const searchButton = document.querySelector(".submit");
 
 const images = await getImages();
 
@@ -58,8 +59,8 @@ const imageCard = image => {
   title.classList.add("image-title");
   title.textContent = image.author;
 
-  card.appendChild(imageWrapper);
   card.appendChild(title);
+  card.appendChild(imageWrapper);
 
   card.addEventListener("click", openModal);
 
@@ -82,6 +83,17 @@ const renderImages = images => {
 };
 
 renderImages(images);
+
+searchButton.addEventListener("click", () => {
+  const searchValue = search.value.trim();
+
+  const filteredImages = images.filter(image =>
+    image.author.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
+  container.innerHTML = "";
+  renderImages(filteredImages);
+});
 
 setTimeout(() => {
   loader.style.display = "none";
